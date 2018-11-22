@@ -100,3 +100,5 @@ inline fun <reified T: Any,  reified U: T> Container.singleton() = singleton( T:
 inline fun <reified T: Any> Container.register(noinline block: ()->T){
     this[T::class] = FunctionProducer(block)
 }
+
+inline fun <reified T: Any> Container.get() = this[T::class]
